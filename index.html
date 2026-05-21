@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add("has-js");</script>
 
 <script type="application/ld+json">
 {
@@ -35,10 +36,20 @@
 </head>
 <body>
 
+<!-- Preloader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-inner">
+    <img src="images/logo.jpg" alt="" class="preloader-mark">
+    <span class="preloader-name">ジュアサリレーションズ</span>
+    <span class="preloader-sub">JUASA RELATIONS</span>
+    <span class="preloader-bar"></span>
+  </div>
+</div>
+
 <header class="site-header" id="top">
   <div class="container header-inner">
     <a href="#top" class="brand">
-      <span class="brand-mark">JR</span>
+      <img src="images/logo.jpg" alt="ジュアサリレーションズ" class="brand-logo">
       <span class="brand-name">ジュアサリレーションズ<small>JUASA RELATIONS</small></span>
     </a>
     <nav class="nav" id="nav">
@@ -47,7 +58,7 @@
       <a href="#approach">アプローチ</a>
       <a href="#service">サービス</a>
       <a href="#profile">代表</a>
-      <a href="#contact" class="nav-cta">無料相談</a>
+      <a href="contact.html" class="nav-cta">無料相談</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -67,12 +78,12 @@
         貴社の人材定着と若手育成の「仕組みづくり」に活かします。
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">無料相談を申し込む</a>
+        <a href="contact.html" class="btn btn-primary">無料相談を申し込む</a>
         <a href="#approach" class="btn btn-ghost">アプローチを見る</a>
       </div>
     </div>
     <div class="hero-stats">
-      <div class="container hero-stats-inner">
+      <div class="container hero-stats-inner reveal-group">
         <div class="stat"><span class="stat-num">38<small>年</small></span><span class="stat-label">教育現場での実践</span></div>
         <div class="stat"><span class="stat-num">校長<small>経験</small></span><span class="stat-label">組織マネジメント</span></div>
         <div class="stat"><span class="stat-num">全国<small>対応</small></span><span class="stat-label">オンライン伴走</span></div>
@@ -83,10 +94,10 @@
   <!-- 課題 -->
   <section class="section issue" id="issue">
     <div class="container">
-      <p class="section-eyebrow">課題認識</p>
-      <h2 class="section-title">なぜ、若手は辞めるのか。</h2>
-      <p class="section-intro">離職は個人の問題ではなく、多くの場合「組織の構造」に原因があります。よくある根本要因を整理します。</p>
-      <div class="issue-grid">
+      <p class="section-eyebrow reveal">課題認識</p>
+      <h2 class="section-title reveal">なぜ、若手は辞めるのか。</h2>
+      <p class="section-intro reveal">離職は個人の問題ではなく、多くの場合「組織の構造」に原因があります。よくある根本要因を整理します。</p>
+      <div class="issue-grid reveal-group">
         <div class="issue-item">
           <span class="issue-no">01</span>
           <h3>育成が属人化している</h3>
@@ -114,9 +125,9 @@
   <!-- 提供価値 -->
   <section class="section value" id="value">
     <div class="container">
-      <p class="section-eyebrow">提供価値</p>
-      <h2 class="section-title">教育のプロフェッショナル<br>だからできること。</h2>
-      <div class="value-grid">
+      <p class="section-eyebrow reveal">提供価値</p>
+      <h2 class="section-title reveal">教育のプロフェッショナル<br>だからできること。</h2>
+      <div class="value-grid reveal-group">
         <article class="value-card">
           <span class="value-no">Ⅰ</span>
           <h3>現場で実証された育成知</h3>
@@ -139,9 +150,9 @@
   <!-- アプローチ -->
   <section class="section approach" id="approach">
     <div class="container">
-      <p class="section-eyebrow light">アプローチ</p>
-      <h2 class="section-title light">3つのステップで、<br>定着する組織へ。</h2>
-      <div class="approach-grid">
+      <p class="section-eyebrow light reveal">アプローチ</p>
+      <h2 class="section-title light reveal">3つのステップで、<br>定着する組織へ。</h2>
+      <div class="approach-grid reveal-group">
         <article class="phase">
           <span class="phase-tag">STEP 01</span>
           <h3>診断</h3>
@@ -170,9 +181,9 @@
   <!-- サービス -->
   <section class="section service" id="service">
     <div class="container">
-      <p class="section-eyebrow">サービス</p>
-      <h2 class="section-title">支援メニュー</h2>
-      <div class="service-list">
+      <p class="section-eyebrow reveal">サービス</p>
+      <h2 class="section-title reveal">支援メニュー</h2>
+      <div class="service-list reveal-group">
         <article class="service-row">
           <div class="service-head"><h3>組織開発コンサルティング</h3><span class="service-meta">継続支援</span></div>
           <p>人材が定着し、育つ組織の仕組みづくりを継続的に支援。現状診断から育成体制・面談設計・運用定着まで一貫して伴走します。</p>
@@ -186,19 +197,19 @@
           <p>企業・団体・学校等へ、組織づくりや若者育成をテーマに登壇。聴き手に合わせて内容をカスタマイズします。</p>
         </article>
       </div>
-      <p class="service-note">料金・実施形態は、ご相談内容に応じて個別にお見積もりいたします。</p>
+      <p class="service-note reveal">料金・実施形態は、ご相談内容に応じて個別にお見積もりいたします。</p>
     </div>
   </section>
 
   <!-- 代表 -->
   <section class="section profile" id="profile">
     <div class="container profile-inner">
-      <figure class="profile-photo">
+      <figure class="profile-photo reveal">
         <img src="images/juasa-akihiro.jpg" alt="ジュアサリレーションズ代表 壽淺章洋" class="profile-img"
              onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
         <div class="profile-photo-placeholder" style="display:none;">壽淺 章洋<small>写真準備中</small></div>
       </figure>
-      <div class="profile-body">
+      <div class="profile-body reveal">
         <p class="section-eyebrow">代表プロフィール</p>
         <h2 class="profile-name">壽淺 章洋<small>じゅあさ あきひろ</small></h2>
         <p class="profile-role">ジュアサリレーションズ 代表／元 北海道野幌高等学校 校長</p>
@@ -221,9 +232,9 @@
   <!-- FAQ -->
   <section class="section faq" id="faq">
     <div class="container">
-      <p class="section-eyebrow">よくある質問</p>
-      <h2 class="section-title">ご相談の前に</h2>
-      <div class="faq-list">
+      <p class="section-eyebrow reveal">よくある質問</p>
+      <h2 class="section-title reveal">ご相談の前に</h2>
+      <div class="faq-list reveal-group">
         <details class="faq-item">
           <summary>相談だけでも可能ですか。</summary>
           <p>はい。初回のご相談は無料です。「何から着手すべきか分からない」段階でも、現状を整理するところからご一緒します。</p>
@@ -247,12 +258,14 @@
   <!-- CTA -->
   <section class="section contact" id="contact">
     <div class="container contact-inner">
-      <p class="section-eyebrow light contact-eyebrow">お問い合わせ</p>
-      <h2 class="contact-title">人が育つ組織づくりを、<br>ご一緒に。</h2>
-      <p class="contact-lead">ご相談・お見積もりは無料です。まずはお気軽にご連絡ください。</p>
-      <a href="mailto:juasarel@gmail.com" class="btn btn-light btn-lg">メールで相談する</a>
-      <p class="contact-mail">juasarel@gmail.com</p>
-      <div class="contact-sns">
+      <p class="section-eyebrow light contact-eyebrow reveal">お問い合わせ</p>
+      <h2 class="contact-title reveal">人が育つ組織づくりを、<br>ご一緒に。</h2>
+      <p class="contact-lead reveal">ご相談・お見積もりは無料です。まずはお気軽にご相談ください。</p>
+      <div class="contact-actions reveal">
+        <a href="contact.html" class="btn btn-light btn-lg">相談フォームへ進む</a>
+      </div>
+      <p class="contact-mail reveal">またはメールでも受け付けています ／ <a href="mailto:juasarel@gmail.com">juasarel@gmail.com</a></p>
+      <div class="contact-sns reveal">
         <a href="https://www.instagram.com/juasarelations/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://x.com/JUASA_Relations" target="_blank" rel="noopener">X（旧Twitter）</a>
         <!-- TODO: Facebook・LINE公式の正式URLを取得して差し替え -->
@@ -267,7 +280,7 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <span class="brand-mark">JR</span>
+      <img src="images/logo.jpg" alt="ジュアサリレーションズ" class="brand-logo">
       <div>
         <p class="footer-name">ジュアサリレーションズ</p>
         <p class="footer-sub">JUASA RELATIONS</p>
@@ -281,7 +294,7 @@
       <a href="#value">提供価値</a>
       <a href="#approach">アプローチ</a>
       <a href="#service">サービス</a>
-      <a href="#contact">お問い合わせ</a>
+      <a href="contact.html">無料相談</a>
     </nav>
   </div>
   <p class="copyright">&copy; 2026 ジュアサリレーションズ / JUASA RELATIONS</p>

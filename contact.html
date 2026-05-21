@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>無料相談フォーム｜ジュアサリレーションズ</title>
+<meta name="description" content="ジュアサリレーションズへの無料相談・お見積もりのお問い合わせフォームです。組織開発・人材定着・研修・講演についてお気軽にご相談ください。">
+<meta name="theme-color" content="#13293d">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add("has-js");</script>
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-inner">
+    <img src="images/logo.jpg" alt="" class="preloader-mark">
+    <span class="preloader-name">ジュアサリレーションズ</span>
+    <span class="preloader-sub">JUASA RELATIONS</span>
+    <span class="preloader-bar"></span>
+  </div>
+</div>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="images/logo.jpg" alt="ジュアサリレーションズ" class="brand-logo">
+      <span class="brand-name">ジュアサリレーションズ<small>JUASA RELATIONS</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html#issue">課題</a>
+      <a href="index.html#value">提供価値</a>
+      <a href="index.html#approach">アプローチ</a>
+      <a href="index.html#service">サービス</a>
+      <a href="index.html#profile">代表</a>
+      <a href="contact.html" class="nav-cta">無料相談</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- Sub-page header -->
+  <section class="subpage">
+    <div class="container subpage-inner">
+      <p class="breadcrumb"><a href="index.html">ホーム</a> ／ 無料相談フォーム</p>
+      <h1 class="subpage-title">無料相談フォーム</h1>
+      <p class="subpage-lead">組織開発・人材定着・研修・講演について、お気軽にご相談ください。内容を確認のうえ、担当より折り返しご連絡いたします。初回のご相談・お見積もりは無料です。</p>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="form-section">
+    <div class="container form-wrap">
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="name">お名前<span class="req">必須</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="company">会社名・団体名<span class="opt">任意</span></label>
+            <input type="text" id="company" name="company" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="email">メールアドレス<span class="req">必須</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="tel">電話番号<span class="opt">任意</span></label>
+            <input type="tel" id="tel" name="tel" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="topic">ご相談の種類<span class="req">必須</span></label>
+          <select id="topic" name="topic" required>
+            <option value="" selected disabled>選択してください</option>
+            <option value="組織開発コンサルティング">組織開発コンサルティング</option>
+            <option value="管理職・若手向け研修">管理職・若手向け研修</option>
+            <option value="講演・セミナー">講演・セミナー</option>
+            <option value="その他・まだ決まっていない">その他・まだ決まっていない</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">ご相談内容<span class="req">必須</span></label>
+          <textarea id="message" name="message" placeholder="現在のお困りごとや、ご相談されたい内容をご記入ください。" required></textarea>
+        </div>
+
+        <!-- スパム対策（人間には非表示） -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">このフィールドは入力しないでください</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span>入力内容を、お問い合わせへの返信のために利用することに同意します。</span>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-lg">この内容で相談する</button>
+        </div>
+
+        <p class="form-note">
+          ※「相談する」を押すと、入力内容を反映したメールの作成画面が開きます。そのまま送信してください。<br>
+          メールソフトが開かない場合は、お手数ですが <a href="mailto:juasarel@gmail.com">juasarel@gmail.com</a> 宛に直接ご連絡ください。
+        </p>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <h3>メールの作成画面を開きました</h3>
+        <p>ご入力ありがとうございます。表示されたメールをそのまま送信いただくと、お問い合わせが完了します。<br>画面が開かない場合は <a href="mailto:juasarel@gmail.com">juasarel@gmail.com</a> までご連絡ください。</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo.jpg" alt="ジュアサリレーションズ" class="brand-logo">
+      <div>
+        <p class="footer-name">ジュアサリレーションズ</p>
+        <p class="footer-sub">JUASA RELATIONS</p>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <p>所在地：北海道江別市</p>
+      <p>お問い合わせ：<a href="mailto:juasarel@gmail.com">juasarel@gmail.com</a></p>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html#value">提供価値</a>
+      <a href="index.html#approach">アプローチ</a>
+      <a href="index.html#service">サービス</a>
+      <a href="contact.html">無料相談</a>
+    </nav>
+  </div>
+  <p class="copyright">&copy; 2026 ジュアサリレーションズ / JUASA RELATIONS</p>
+</footer>
+
+<a href="#top" class="to-top" id="toTop" aria-label="ページ上部へ戻る">↑</a>
+
+<script src="js/main.js"></script>
+<script>
+(function () {
+  "use strict";
+  var form = document.getElementById("contactForm");
+  if (!form) return;
+  var success = document.getElementById("formSuccess");
+  var MAIL = "juasarel@gmail.com";
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    // ハニーポット（ボット検出）
+    if (form.website.value) return;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var name = form.name.value.trim();
+    var company = form.company.value.trim();
+    var email = form.email.value.trim();
+    var tel = form.tel.value.trim();
+    var topic = form.topic.value;
+    var message = form.message.value.trim();
+
+    var subject = "【無料相談】" + (company ? company + " " : "") + name + " 様より";
+    var body = [
+      "ジュアサリレーションズ ご担当者さま",
+      "",
+      "ホームページの相談フォームよりお問い合わせいたします。",
+      "",
+      "■ お名前：" + name,
+      "■ 会社名・団体名：" + (company || "（未記入）"),
+      "■ メールアドレス：" + email,
+      "■ 電話番号：" + (tel || "（未記入）"),
+      "■ ご相談の種類：" + topic,
+      "",
+      "■ ご相談内容：",
+      message,
+      ""
+    ].join("\n");
+
+    window.location.href = "mailto:" + MAIL +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    if (success) {
+      success.classList.add("show");
+      success.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
+})();
+</script>
+</body>
+</html>
