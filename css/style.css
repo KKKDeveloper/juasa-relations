@@ -70,7 +70,11 @@ a { color: inherit; text-decoration: none; }
 .hero-eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--gold); }
 .hero-title {
   font-family: var(--serif); font-weight: 700;
-  font-size: clamp(2.3rem, 5.6vw, 4rem); line-height: 1.32; letter-spacing: 1px; color: var(--navy); margin-bottom: 28px;
+  font-size: clamp(2.3rem, 5.6vw, 4rem); line-height: 1.32; letter-spacing: 1px; color: var(--navy); margin-bottom: 16px;
+}
+.hero-subtitle {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(1.2rem, 2.6vw, 1.7rem); line-height: 1.5; letter-spacing: .5px; color: var(--navy); margin-bottom: 26px;
 }
 .hero-lead { color: var(--muted); font-size: 1.05rem; margin-bottom: 38px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; padding-bottom: 70px; }
@@ -256,12 +260,14 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Hero entrance ---------- */
 .has-js .hero-eyebrow,
 .has-js .hero-title,
+.has-js .hero-subtitle,
 .has-js .hero-lead,
 .has-js .hero-actions { opacity: 0; transform: translateY(22px); }
-body.loaded .hero-eyebrow { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .05s forwards; }
-body.loaded .hero-title   { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .18s forwards; }
-body.loaded .hero-lead    { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .34s forwards; }
-body.loaded .hero-actions { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .48s forwards; }
+body.loaded .hero-eyebrow  { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .05s forwards; }
+body.loaded .hero-title    { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .18s forwards; }
+body.loaded .hero-subtitle { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .30s forwards; }
+body.loaded .hero-lead     { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .42s forwards; }
+body.loaded .hero-actions  { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .54s forwards; }
 @keyframes heroIn { to { opacity: 1; transform: none; } }
 
 /* ---------- Scroll reveal ---------- */
@@ -352,6 +358,7 @@ body.loaded .hero-actions { animation: heroIn .85s cubic-bezier(.16,.7,.3,1) .48
   .has-js .reveal-group > *,
   .has-js .hero-eyebrow,
   .has-js .hero-title,
+  .has-js .hero-subtitle,
   .has-js .hero-lead,
   .has-js .hero-actions { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; }
   .preloader { display: none !important; }
