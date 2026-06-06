@@ -80,11 +80,12 @@ if (empty($verify['success'])) {
 }
 
 // --- メール明細（共通） ---
+$telDisp = juasa_format_tel($tel);
 $lines = [
     '■ お名前：' . $name,
     '■ 会社名・団体名：' . ($company !== '' ? $company : '（未記入）'),
     '■ メールアドレス：' . $email,
-    '■ 電話番号：' . ($tel !== '' ? $tel : '（未記入）'),
+    '■ 電話番号：' . ($telDisp !== '' ? $telDisp : '（未記入）'),
     '■ ご相談の種類：' . $topic,
     '',
     '■ ご相談内容：',
@@ -133,6 +134,23 @@ function juasa_mail(string $to, string $subject, string $body, string $replyTo =
     $encodedSubject = mb_encode_mimeheader($subject, 'UTF-8', 'B');
     // 第5引数 -f で envelope-from を差出人ドメインに揃える（SPF整合）
     return mail($to, $encodedSubject, $body, implode("\r\n", $headers), '-f' . MAIL_FROM_EMAIL);
+}
+
+// 電話番号を読みやすい国内表記に整形（+81→0、携帯は3-4-4ハイフン）
+function juasa_format_tel(string $tel): string
+{
+    $t = preg_replace('/[^\d+]/', '', $tel);
+    if (strpos($t, '+81') === 0) {
+        $t = '0' . substr($t, 3);
+    }
+    $t = preg_replace('/\D/', '', $t);
+    if ($t === '') {
+        return '';
+    }
+    if (preg_match('/^0[789]0\d{8}$/', $t)) {
+        return substr($t, 0, 3) . '-' . substr($t, 3, 4) . '-' . substr($t, 7);
+    }
+    return $t;
 }
 
 function juasa_post(string $url, array $data): array
