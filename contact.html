@@ -13,6 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add("has-js");</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -111,19 +112,21 @@
           <span>入力内容を、お問い合わせへの返信のために利用することに同意します。</span>
         </label>
 
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADf4Aeg-oTJ01DVD" data-language="ja"></div>
+
         <div class="form-actions">
           <button type="submit" class="btn btn-primary btn-lg">この内容で相談する</button>
         </div>
 
         <p class="form-note">
-          ※「相談する」を押すと、入力内容を反映したメールの作成画面が開きます。そのまま送信してください。<br>
-          メールソフトが開かない場合は、お手数ですが <a href="mailto:juasarel@gmail.com">juasarel@gmail.com</a> 宛に直接ご連絡ください。
+          ※「相談する」を押すと、その場で送信されます。担当より折り返しご連絡いたします。<br>
+          うまく送信できない場合は、お手数ですが <a href="mailto:juasarel@gmail.com">juasarel@gmail.com</a> 宛に直接ご連絡ください。
         </p>
       </form>
 
       <div class="form-success" id="formSuccess">
-        <h3>メールの作成画面を開きました</h3>
-        <p>ご入力ありがとうございます。表示されたメールをそのまま送信いただくと、お問い合わせが完了します。<br>画面が開かない場合は <a href="mailto:juasarel@gmail.com">juasarel@gmail.com</a> までご連絡ください。</p>
+        <h3>お問い合わせを受け付けました</h3>
+        <p>ご入力ありがとうございます。確認のメールを自動でお送りしました。<br>内容を確認のうえ、担当より折り返しご連絡いたします。</p>
       </div>
 
     </div>
@@ -163,7 +166,7 @@
   var form = document.getElementById("contactForm");
   if (!form) return;
   var success = document.getElementById("formSuccess");
-  var MAIL = "juasarel@gmail.com";
+  var btn = form.querySelector('button[type="submit"]');
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -171,38 +174,29 @@
     if (form.website.value) return;
     if (!form.checkValidity()) { form.reportValidity(); return; }
 
-    var name = form.name.value.trim();
-    var company = form.company.value.trim();
-    var email = form.email.value.trim();
-    var tel = form.tel.value.trim();
-    var topic = form.topic.value;
-    var message = form.message.value.trim();
+    btn.disabled = true;
+    btn.textContent = "送信中…";
 
-    var subject = "【無料相談】" + (company ? company + " " : "") + name + " 様より";
-    var body = [
-      "ジュアサリレーションズ ご担当者さま",
-      "",
-      "ホームページの相談フォームよりお問い合わせいたします。",
-      "",
-      "■ お名前：" + name,
-      "■ 会社名・団体名：" + (company || "（未記入）"),
-      "■ メールアドレス：" + email,
-      "■ 電話番号：" + (tel || "（未記入）"),
-      "■ ご相談の種類：" + topic,
-      "",
-      "■ ご相談内容：",
-      message,
-      ""
-    ].join("\n");
-
-    window.location.href = "mailto:" + MAIL +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
-
-    if (success) {
-      success.classList.add("show");
-      success.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
+    fetch("contact.php", { method: "POST", body: new FormData(form) })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          return { ok: res.ok && data.ok, data: data };
+        });
+      })
+      .then(function (r) {
+        if (!r.ok) throw new Error((r.data && r.data.error) || "failed");
+        form.style.display = "none";
+        if (success) {
+          success.classList.add("show");
+          success.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      })
+      .catch(function () {
+        alert("送信に失敗しました。お手数ですが juasarel@gmail.com まで直接ご連絡ください。");
+        btn.disabled = false;
+        btn.textContent = "この内容で相談する";
+        if (window.turnstile) { try { turnstile.reset(); } catch (e) {} }
+      });
   });
 })();
 </script>
